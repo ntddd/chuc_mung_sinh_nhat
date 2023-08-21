@@ -1,0 +1,124 @@
+----------Thông tin kết nối SSH -------------------------------------------------------------------
+UAT : 	149.28.132.56 
+	root/m9E[$x5v3ujmL%K?
+
+IRD:
+	10.201.201.221
+	elot/Vietlot@2023
+
+	10.201.201.222
+	elot/Vietlot@2023
+	
+	10.201.201.225
+	Viettech@123
+	
+	10.201.201.229
+	elot/Viettech@123
+	10.201.201.224
+	elot/g%X)%5aTKm]nfKK
+
+-10.201.201.222	/u01/elot/app/cms-api/process1 và 2
+-10.201.201.221	/u01/elot/app/cms-api/process1 và 2
+
+VPN- MSUITE : 	msuite.mytel.com.mm
+		username: viettech_ird
+		password: Jupiter@2023
+
+
+UAT:
+
+171.244.50.177:1530
+SERVICE_NAME=orcl
+user pass: IRD  /  ird123
+
+
+PRO: 
+SERVICE_NAME=VASPU_PDB
+IP: 10.201.4.3
+schema : ELOT
+pass: 68NHrCSA#
+--------------------------------lệnh chạy biuld server:---------------------------------------------
+
+cd.. // ra thư mục tổng
+ls // xem thư thư mục
+cd duc -> thu mục chua file// vào thư mục duc
+vi config.txt // tạo file config (bấm a thì là insert)
+Đủ 4 file application.properties file.jar libs  run
+(Loi kiếm tra file libs du nhu trong thu mục chua)
+cat run
+./run  start/stop/reset // chạy file trên server
+- nếu gặp lỗi Permission denied (từ chối quyền) thì chạy lệnh chmod 775/777 run
+- nếu lỗi đối với con search thì kiểm tra phiên bản java và vào file run chỉnh đường dẫn vào java mới 
+telnet 127.0.0.1 Port //kiểm tra ứng dụng chạy chưa nhập trên terminal server
+telnet 192.28.132.56 Port // nhập trên Terminal máy tính cá nhân nếu lỗi không Connect đc chạy lần lượt 3 lệnh firewall-cmd --get-active-zones -> firewall-cmd --zone=public --add-port=9266/tcp --permanent -> firewall-cmd --reload
+
+
+
+----------------------------------------------------------------------------------------------------
+Tìm Port đang chạy trên máy lsof -i TCP:8086
+netstat -ano | findstr :
+Đóng Port kill -9 8086
+ps -aux | grep java
+
+---------------------------------build 221 và 222 --------------------------------------------------
+CMS vào 2 file PaymentChannel và PaymentStatus controller Comment dòng có schema mở dòng ko có schema lên
+Tìm kiếm toán file chữ IRD_PAYMENT và xoá nó đi trừ Apple trong Apple
+ - từ 221 vào app -> cms-api -> process1, process2 (Nhớ tạo file backup) 
+- lệnh ./jman start / shop
+
+----------------------------------------GGame------------
+sudo lsof -i :10010(port)
+sudo kill 14236(PID)
+dotnet GGame.dll(tên file)
+nohup dotnet GGame.dll &
+mở port : firewall-cmd --zone=public --add-port=2888/tcp --permanent
+firewall-cmd --reload
+
+UAT DB:
+27.71.225.61:1530
+metgames
+metgames123
+orcl
+
+
+---------------------------------------TNew----------------
+VPN:
+https://125.234.172.59/
+equizz / 5gka4DCdyA
+
+DB: IP: 10.226.242.130 1521
+Db username: tnews
+password: S4p3Tn335!
+SID: vas1
+
+------------------------  MQizzz---------
+DB User: mquizz
+Pass: mquizz123
+Service_name: orcl
+Port: 1530
+Ip: 171.244.50.177
+
+------------- Ufotun ---------
+msuite.unitel.com.la
+VPN: stl_gts@unitel.svpgate.com		Gts#2!21
+
+
+cloud-udat-app-01	10.120.251.1	ufortune	uFtUne#2023
+cloud-udat-app-02	10.120.251.2	ufortune	uFtUne#2023
+
+user db: UFORTUNE/uFtUne#2023
+STL_VAS_EXT =
+  (DESCRIPTION =
+  (LOAD_BALANCE=YES)
+    (ADDRESS = (PROTOCOL = TCP)(HOST = 10.78.3.95)(PORT = 1521))
+    (ADDRESS = (PROTOCOL = TCP)(HOST = 10.78.3.96)(PORT = 1521))
+    (CONNECT_DATA =
+      (SERVER = SHARED)
+      (SERVICE_NAME = stl_vasext)
+    )
+  )
+--dev
+spring.datasource.url=jdbc:oracle:thin:@27.71.225.61:1530/orcl
+spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.Oracle10gDialect
+spring.datasource.username=natcom_slot
+spring.datasource.password=natcom@123
